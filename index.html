@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional Portfolio — Digital Marketing & AI Automation Expert | Transforming brands with data-driven strategies and intelligent workflow automation." />
+  <meta name="keywords" content="digital marketing, AI automation, workflow automation, SEO, paid ads, content strategy, marketing automation, freelancer" />
+  <meta name="author" content="Alex Morgan" />
+  <title>Alex Morgan | Digital Marketing & AI Automation Expert</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Portfolio Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ─── PAGE LOADER ─── -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">AM</div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- ─── NOISE TEXTURE OVERLAY ─── -->
+  <div class="noise-overlay"></div>
+
+  <!-- ════════════════════════════
+       NAVIGATION
+  ════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta btn-primary">Let's Talk</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#process" class="mobile-link">Process</a></li>
+      <li><a href="#testimonials" class="mobile-link">Testimonials</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary mobile-cta">Let's Talk</a>
+  </div>
+
+  <!-- ════════════════════════════
+       HERO SECTION
+  ════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="hero-bg.jpg" alt="Hero Background" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <div class="hero-content container">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for new projects
+      </div>
+
+      <h1 class="hero-title reveal-up">
+        I Build <span class="gradient-text typed-wrapper"><span id="typedText"></span><span class="typed-cursor">|</span></span><br />
+        <span class="hero-title-sub">That Drive Real Growth</span>
+      </h1>
+
+      <p class="hero-description reveal-up">
+        I'm <strong>Alex Morgan</strong> — a top-tier Digital Marketing Strategist & AI Automation Architect.
+        I help ambitious brands scale faster using data-driven campaigns and intelligent workflow automation.
+      </p>
+
+      <div class="hero-stats reveal-up">
+        <div class="stat-item">
+          <span class="stat-number" data-target="150">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="7">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="42">0</span><span class="stat-suffix">M+</span>
+          <span class="stat-label">Revenue Generated</span>
+        </div>
+      </div>
+
+      <div class="hero-actions reveal-up">
+        <a href="#work" class="btn-primary btn-lg">
+          <i data-lucide="briefcase"></i> View My Work
+        </a>
+        <a href="#contact" class="btn-ghost btn-lg">
+          <i data-lucide="message-circle"></i> Start a Project
+        </a>
+      </div>
+
+      <div class="hero-scroll-hint reveal-up">
+        <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+        <span>Scroll to explore</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       MARQUEE TICKER
+  ════════════════════════════ -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Digital Marketing</span><span class="marquee-dot">✦</span>
+        <span>AI Automation</span><span class="marquee-dot">✦</span>
+        <span>SEO Strategy</span><span class="marquee-dot">✦</span>
+        <span>Workflow Automation</span><span class="marquee-dot">✦</span>
+        <span>Growth Hacking</span><span class="marquee-dot">✦</span>
+        <span>Paid Ads</span><span class="marquee-dot">✦</span>
+        <span>Content Strategy</span><span class="marquee-dot">✦</span>
+        <span>CRM Automation</span><span class="marquee-dot">✦</span>
+        <span>Data Analytics</span><span class="marquee-dot">✦</span>
+        <span>Lead Generation</span><span class="marquee-dot">✦</span>
+        <span>Digital Marketing</span><span class="marquee-dot">✦</span>
+        <span>AI Automation</span><span class="marquee-dot">✦</span>
+        <span>SEO Strategy</span><span class="marquee-dot">✦</span>
+        <span>Workflow Automation</span><span class="marquee-dot">✦</span>
+        <span>Growth Hacking</span><span class="marquee-dot">✦</span>
+        <span>Paid Ads</span><span class="marquee-dot">✦</span>
+        <span>Content Strategy</span><span class="marquee-dot">✦</span>
+        <span>CRM Automation</span><span class="marquee-dot">✦</span>
+        <span>Data Analytics</span><span class="marquee-dot">✦</span>
+        <span>Lead Generation</span><span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       ABOUT SECTION
+  ════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-image-wrapper">
+            <div class="about-glow"></div>
+            <div class="about-avatar">
+              <div class="avatar-initials">AM</div>
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+              <div class="avatar-ring ring-3"></div>
+            </div>
+            <div class="floating-card card-top-right">
+              <div class="fc-icon"><i data-lucide="trending-up"></i></div>
+              <div class="fc-info"><span class="fc-value">+347%</span><span class="fc-label">ROI Increase</span></div>
+            </div>
+            <div class="floating-card card-bottom-left">
+              <div class="fc-icon green"><i data-lucide="zap"></i></div>
+              <div class="fc-info"><span class="fc-value">10x</span><span class="fc-label">Faster Workflows</span></div>
+            </div>
+            <div class="floating-card card-bottom-right">
+              <div class="fc-icon purple"><i data-lucide="brain"></i></div>
+              <div class="fc-info"><span class="fc-value">AI</span><span class="fc-label">Powered</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title">Where <span class="gradient-text">Strategy</span> Meets<br/><span class="gradient-text">Intelligence</span></h2>
+          <p class="about-text">With over <strong>7 years of experience</strong> at the intersection of digital marketing and artificial intelligence, I've helped 150+ brands — from ambitious startups to Fortune 500 companies — achieve explosive growth through intelligent, data-driven strategies.</p>
+          <p class="about-text">I specialize in building <strong>end-to-end marketing ecosystems</strong> that combine human creativity with AI-powered efficiency. My workflows don't just automate tasks — they think, adapt, and scale your business 24/7 without you lifting a finger.</p>
+          <div class="skills-grid">
+            <div class="skill-tag"><i data-lucide="target"></i> Performance Marketing</div>
+            <div class="skill-tag"><i data-lucide="cpu"></i> AI Workflows (n8n / Make)</div>
+            <div class="skill-tag"><i data-lucide="search"></i> Technical SEO</div>
+            <div class="skill-tag"><i data-lucide="bar-chart-2"></i> Analytics & BI</div>
+            <div class="skill-tag"><i data-lucide="mail"></i> Email Automation</div>
+            <div class="skill-tag"><i data-lucide="layers"></i> CRM Integration</div>
+            <div class="skill-tag"><i data-lucide="share-2"></i> Social Media Strategy</div>
+            <div class="skill-tag"><i data-lucide="bot"></i> Chatbot Development</div>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn-primary">Work With Me</a>
+            <a href="#" class="btn-outline"><i data-lucide="download"></i> Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       SERVICES SECTION
+  ════════════════════════════ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">What I Do</div>
+        <h2 class="section-title">Premium <span class="gradient-text">Services</span><br/>Built for Results</h2>
+        <p class="section-subtitle">Every service is crafted with precision, powered by data, and engineered to deliver measurable results that impact your bottom line.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Service 01 -->
+        <div class="service-card reveal-up" data-delay="0">
+          <div class="service-number">01</div>
+          <div class="service-icon"><i data-lucide="target"></i></div>
+          <h3 class="service-title">Performance Marketing</h3>
+          <p class="service-desc">Data-obsessed paid advertising across Google, Meta, LinkedIn & TikTok. Every dollar tracked, optimized and multiplied.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> Google & Meta Ads Management</li>
+            <li><i data-lucide="check"></i> Conversion Rate Optimization</li>
+            <li><i data-lucide="check"></i> Multi-channel Attribution</li>
+            <li><i data-lucide="check"></i> A/B Testing & Iteration</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">From $1,500/mo</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 02 - Featured -->
+        <div class="service-card service-card-featured reveal-up" data-delay="100">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-number">02</div>
+          <div class="service-icon featured-icon"><i data-lucide="cpu"></i></div>
+          <h3 class="service-title">AI Automation Workflows</h3>
+          <p class="service-desc">Intelligent end-to-end automation systems using n8n, Make, Zapier & custom AI agents that run your business on autopilot.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> Custom n8n / Make Workflows</li>
+            <li><i data-lucide="check"></i> AI Agent Development (GPT-4)</li>
+            <li><i data-lucide="check"></i> CRM & Tool Integrations</li>
+            <li><i data-lucide="check"></i> 24/7 Automated Reporting</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag featured-tag">From $2,000/project</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 03 -->
+        <div class="service-card reveal-up" data-delay="200">
+          <div class="service-number">03</div>
+          <div class="service-icon"><i data-lucide="search"></i></div>
+          <h3 class="service-title">SEO & Content Strategy</h3>
+          <p class="service-desc">Authority-building SEO strategies combined with AI-enhanced content that ranks, converts, and compounds over time.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> Technical SEO Audits</li>
+            <li><i data-lucide="check"></i> AI Content Production</li>
+            <li><i data-lucide="check"></i> Link Building Campaigns</li>
+            <li><i data-lucide="check"></i> Keyword Strategy</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">From $1,200/mo</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 04 -->
+        <div class="service-card reveal-up" data-delay="300">
+          <div class="service-number">04</div>
+          <div class="service-icon"><i data-lucide="mail"></i></div>
+          <h3 class="service-title">Email & CRM Automation</h3>
+          <p class="service-desc">Revenue-generating email sequences and CRM pipelines that nurture leads and close deals while you sleep.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> Klaviyo / ActiveCampaign Setup</li>
+            <li><i data-lucide="check"></i> Drip Sequence Design</li>
+            <li><i data-lucide="check"></i> HubSpot / Salesforce CRM</li>
+            <li><i data-lucide="check"></i> Behavioral Segmentation</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">From $800/mo</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 05 -->
+        <div class="service-card reveal-up" data-delay="400">
+          <div class="service-number">05</div>
+          <div class="service-icon"><i data-lucide="bot"></i></div>
+          <h3 class="service-title">AI Chatbot Development</h3>
+          <p class="service-desc">Custom intelligent chatbots for lead qualification, customer support, and sales — trained on your business data.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> GPT-Powered Custom Bots</li>
+            <li><i data-lucide="check"></i> Website & WhatsApp Integration</li>
+            <li><i data-lucide="check"></i> Lead Capture Flows</li>
+            <li><i data-lucide="check"></i> 24/7 Support Automation</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">From $1,500/project</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 06 -->
+        <div class="service-card reveal-up" data-delay="500">
+          <div class="service-number">06</div>
+          <div class="service-icon"><i data-lucide="bar-chart-2"></i></div>
+          <h3 class="service-title">Analytics & BI Dashboards</h3>
+          <p class="service-desc">Real-time business intelligence dashboards that translate your marketing data into clear, actionable insights.</p>
+          <ul class="service-features">
+            <li><i data-lucide="check"></i> Looker Studio / GA4 Setup</li>
+            <li><i data-lucide="check"></i> Custom KPI Dashboards</li>
+            <li><i data-lucide="check"></i> Automated Weekly Reports</li>
+            <li><i data-lucide="check"></i> Funnel & Cohort Analysis</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-tag">From $900/mo</span>
+            <a href="#contact" class="service-link">Get Started <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       TECH STACK
+  ════════════════════════════ -->
+  <section class="tech-stack section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">My Toolkit</div>
+        <h2 class="section-title">Powered by <span class="gradient-text">World-Class</span> Tools</h2>
+      </div>
+      <div class="tech-grid reveal-up">
+        <div class="tech-item"><div class="tech-icon">🤖</div><span>ChatGPT / GPT-4</span></div>
+        <div class="tech-item"><div class="tech-icon">⚡</div><span>n8n</span></div>
+        <div class="tech-item"><div class="tech-icon">🔗</div><span>Make (Integromat)</span></div>
+        <div class="tech-item"><div class="tech-icon">🔌</div><span>Zapier</span></div>
+        <div class="tech-item"><div class="tech-icon">📊</div><span>Google Analytics 4</span></div>
+        <div class="tech-item"><div class="tech-icon">🎯</div><span>Meta Ads</span></div>
+        <div class="tech-item"><div class="tech-icon">🔍</div><span>Google Ads</span></div>
+        <div class="tech-item"><div class="tech-icon">📧</div><span>Klaviyo</span></div>
+        <div class="tech-item"><div class="tech-icon">🧩</div><span>HubSpot</span></div>
+        <div class="tech-item"><div class="tech-icon">📈</div><span>Looker Studio</span></div>
+        <div class="tech-item"><div class="tech-icon">🌐</div><span>Semrush / Ahrefs</span></div>
+        <div class="tech-item"><div class="tech-icon">💬</div><span>ManyChat</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       PORTFOLIO / WORK
+  ════════════════════════════ -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">Portfolio</div>
+        <h2 class="section-title">Work That <span class="gradient-text">Speaks</span><br/>For Itself</h2>
+        <p class="section-subtitle">Real campaigns. Real results. Here's what happens when strategy meets execution.</p>
+      </div>
+      <div class="work-filters reveal-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
+      </div>
+      <div class="work-grid" id="workGrid">
+
+        <div class="work-card reveal-up" data-category="marketing">
+          <div class="work-card-inner">
+            <div class="work-visual wv-1">
+              <div class="work-visual-content">
+                <div class="wv-chart">
+                  <div class="wv-bar" style="--h:40%"></div>
+                  <div class="wv-bar" style="--h:65%"></div>
+                  <div class="wv-bar" style="--h:45%"></div>
+                  <div class="wv-bar" style="--h:80%"></div>
+                  <div class="wv-bar" style="--h:95%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">Meta Ads</span><span class="work-tag">Paid Social</span></div>
+              <h3 class="work-title">E-Commerce Revenue Boost — Fashion Brand</h3>
+              <p class="work-desc">Scaled a D2C fashion brand from $50K to $420K monthly revenue through aggressive Meta ROAS optimization and creative testing.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">+740%</span><span class="metric-key">Revenue Growth</span></div>
+                <div class="metric"><span class="metric-val">4.8x</span><span class="metric-key">ROAS</span></div>
+                <div class="metric"><span class="metric-val">-62%</span><span class="metric-key">CPA Reduction</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-category="automation">
+          <div class="work-card-inner">
+            <div class="work-visual wv-2">
+              <div class="work-visual-content">
+                <div class="wv-flow">
+                  <div class="wv-node wvn-1">📥 Lead</div>
+                  <div class="wv-arrow">→</div>
+                  <div class="wv-node wvn-2">🤖 AI</div>
+                  <div class="wv-arrow">→</div>
+                  <div class="wv-node wvn-3">✅ Deal</div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">n8n</span><span class="work-tag">GPT-4</span><span class="work-tag">HubSpot</span></div>
+              <h3 class="work-title">AI Lead Qualification Engine — SaaS Company</h3>
+              <p class="work-desc">Built a fully automated lead scoring and qualification system using GPT-4 that processes, scores, and routes 500+ leads/day without human intervention.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">500+</span><span class="metric-key">Leads/Day</span></div>
+                <div class="metric"><span class="metric-val">80hrs</span><span class="metric-key">Saved/Week</span></div>
+                <div class="metric"><span class="metric-val">+210%</span><span class="metric-key">Conversion Rate</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-category="seo">
+          <div class="work-card-inner">
+            <div class="work-visual wv-3">
+              <div class="work-visual-content">
+                <div class="wv-seo"><div class="wv-rank">#1</div><div class="wv-seo-label">Google Ranking</div></div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">Technical SEO</span><span class="work-tag">Content</span></div>
+              <h3 class="work-title">From Page 8 to #1 — Legal Services Firm</h3>
+              <p class="work-desc">Complete SEO overhaul for a law firm targeting high-value keywords. Achieved 14 first-page rankings and 310% organic traffic growth in 6 months.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">+310%</span><span class="metric-key">Organic Traffic</span></div>
+                <div class="metric"><span class="metric-val">14</span><span class="metric-key">Page-1 Rankings</span></div>
+                <div class="metric"><span class="metric-val">6mo</span><span class="metric-key">Timeline</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-category="automation">
+          <div class="work-card-inner">
+            <div class="work-visual wv-4">
+              <div class="work-visual-content">
+                <div class="wv-email">
+                  <div class="wv-email-icon">📧</div>
+                  <div class="wv-email-lines"><div class="wv-line"></div><div class="wv-line short"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">Email Automation</span><span class="work-tag">Klaviyo</span></div>
+              <h3 class="work-title">Revenue Recovery System — Shopify Brand</h3>
+              <p class="work-desc">Designed a 12-step abandoned cart + post-purchase email ecosystem that recovered $280K in lost revenue within the first quarter.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">$280K</span><span class="metric-key">Recovered</span></div>
+                <div class="metric"><span class="metric-val">42%</span><span class="metric-key">Open Rate</span></div>
+                <div class="metric"><span class="metric-val">9.3%</span><span class="metric-key">Click Rate</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-category="analytics">
+          <div class="work-card-inner">
+            <div class="work-visual wv-5">
+              <div class="work-visual-content">
+                <div class="wv-dashboard">
+                  <div class="wvd-row"><div class="wvd-card blue"></div><div class="wvd-card green"></div></div>
+                  <div class="wvd-row"><div class="wvd-card purple wide"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">Looker Studio</span><span class="work-tag">GA4</span></div>
+              <h3 class="work-title">Real-Time Marketing Dashboard — Tech Startup</h3>
+              <p class="work-desc">Built a unified marketing intelligence dashboard pulling data from 11 sources into one real-time view, replacing 20+ manual weekly reports.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">11</span><span class="metric-key">Data Sources</span></div>
+                <div class="metric"><span class="metric-val">20hrs</span><span class="metric-key">Saved/Week</span></div>
+                <div class="metric"><span class="metric-val">Real-Time</span><span class="metric-key">Insights</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal-up" data-category="marketing">
+          <div class="work-card-inner">
+            <div class="work-visual wv-6">
+              <div class="work-visual-content">
+                <div class="wv-growth">
+                  <svg viewBox="0 0 100 60" class="growth-svg">
+                    <defs>
+                      <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#6c63ff"/>
+                        <stop offset="100%" stop-color="#a78bfa"/>
+                      </linearGradient>
+                    </defs>
+                    <polyline points="0,55 20,45 40,35 60,20 80,10 100,2" fill="none" stroke="url(#lineGrad)" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="work-info">
+              <div class="work-tags"><span class="work-tag">Google Ads</span><span class="work-tag">B2B</span></div>
+              <h3 class="work-title">B2B Lead Machine — Industrial Manufacturer</h3>
+              <p class="work-desc">Launched a highly targeted Google Ads + LinkedIn strategy that generated 320 qualified B2B leads per month at $28 CPL for a niche industrial firm.</p>
+              <div class="work-metrics">
+                <div class="metric"><span class="metric-val">320</span><span class="metric-key">Leads/Month</span></div>
+                <div class="metric"><span class="metric-val">$28</span><span class="metric-key">Cost Per Lead</span></div>
+                <div class="metric"><span class="metric-val">+580%</span><span class="metric-key">Pipeline Growth</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       PROCESS SECTION
+  ════════════════════════════ -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">How I Work</div>
+        <h2 class="section-title">A <span class="gradient-text">Proven Process</span><br/>Every Single Time</h2>
+        <p class="section-subtitle">From discovery to delivery, every project follows a battle-tested framework designed to maximize results and minimize guesswork.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step reveal-up">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i data-lucide="compass"></i></div>
+          <div class="step-content">
+            <h3 class="step-title">Discovery & Audit</h3>
+            <p class="step-desc">Deep dive into your business, current marketing setup, competitors, and goals. We map every gap and opportunity before writing a single line of strategy.</p>
+            <div class="step-deliverable">
+              <span><i data-lucide="file-text"></i> Full Audit Report</span>
+              <span><i data-lucide="clock"></i> Week 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="100">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i data-lucide="map"></i></div>
+          <div class="step-content">
+            <h3 class="step-title">Strategy Blueprint</h3>
+            <p class="step-desc">Custom-built roadmap with KPIs, channel strategy, automation architecture, and content calendar. Every action tied to a measurable outcome.</p>
+            <div class="step-deliverable">
+              <span><i data-lucide="file-text"></i> Strategy Document</span>
+              <span><i data-lucide="clock"></i> Week 2</span>
+            </div>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="200">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i data-lucide="code-2"></i></div>
+          <div class="step-content">
+            <h3 class="step-title">Build & Automate</h3>
+            <p class="step-desc">I set up all campaigns, automation workflows, integrations, and tracking. Every system is tested, documented, and optimized for peak performance.</p>
+            <div class="step-deliverable">
+              <span><i data-lucide="file-text"></i> Live Systems</span>
+              <span><i data-lucide="clock"></i> Weeks 3–4</span>
+            </div>
+          </div>
+        </div>
+        <div class="process-step reveal-up" data-delay="300">
+          <div class="step-number">04</div>
+          <div class="step-icon"><i data-lucide="rocket"></i></div>
+          <div class="step-content">
+            <h3 class="step-title">Launch & Scale</h3>
+            <p class="step-desc">Go live with full monitoring. Rapid iteration based on real data. I scale what works and cut what doesn't — fast and decisively.</p>
+            <div class="step-deliverable">
+              <span><i data-lucide="file-text"></i> Weekly Reports</span>
+              <span><i data-lucide="clock"></i> Ongoing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">Client Love</div>
+        <h2 class="section-title">What My <span class="gradient-text">Clients</span><br/>Say About Me</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal-up">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Alex completely transformed our paid advertising. In 3 months, our ROAS went from 1.8x to 6.2x. The AI workflow he built saved us 40 hours per week. Absolutely mind-blowing ROI.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">JR</div>
+            <div class="author-info"><span class="author-name">James Richardson</span><span class="author-role">CEO, NovaTech Solutions</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" data-delay="100">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Working with Alex was a game-changer. The AI automation system he built for our lead pipeline is extraordinary. We're closing 3x more deals with the same team size. Worth every penny.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">SC</div>
+            <div class="author-info"><span class="author-name">Sarah Chen</span><span class="author-role">Founder, GrowthLab Agency</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" data-delay="200">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Our organic traffic grew 400% in just 5 months. Alex's SEO strategy is methodical, data-driven, and incredibly effective. Our cost-per-acquisition dropped 70% simultaneously.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">MK</div>
+            <div class="author-info"><span class="author-name">Marcus Klein</span><span class="author-role">CMO, Elevate Commerce</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" data-delay="300">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The chatbot Alex built for us handles 70% of our customer inquiries automatically. Response time went from 8 hours to 30 seconds. Customer satisfaction scores are at an all-time high.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">LP</div>
+            <div class="author-info"><span class="author-name">Laura Patel</span><span class="author-role">Director, Meridian Services</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" data-delay="400">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Alex's email automation brought in $180K in new revenue in Q1 alone. His understanding of consumer psychology combined with technical execution is unmatched. Best investment we've made.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #fa709a, #fee140);">DW</div>
+            <div class="author-info"><span class="author-name">David Walsh</span><span class="author-role">VP Marketing, StyleHouse</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal-up" data-delay="500">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The marketing dashboard Alex delivered gives us crystal clarity on all 11 of our data sources. What used to take 3 days of manual reporting now happens in real-time. An absolute powerhouse.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">AO</div>
+            <div class="author-info"><span class="author-name">Aisha Okonkwo</span><span class="author-role">COO, PulseMetrics Inc.</span></div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       CTA SECTION
+  ════════════════════════════ -->
+  <section class="cta-section section">
+    <div class="container">
+      <div class="cta-wrapper reveal-up">
+        <div class="cta-glow"></div>
+        <div class="cta-content">
+          <div class="cta-badge"><span class="badge-dot"></span>Currently accepting new clients</div>
+          <h2 class="cta-title">Ready to <span class="gradient-text">10x</span> Your<br/>Business?</h2>
+          <p class="cta-desc">Let's build something extraordinary together. Whether you need a complete marketing overhaul or a single high-impact automation system, I'm here to make it happen.</p>
+          <div class="cta-actions">
+            <a href="#contact" class="btn-primary btn-xl"><i data-lucide="calendar"></i> Book a Free Strategy Call</a>
+            <a href="mailto:alex@domain.com" class="btn-ghost btn-xl"><i data-lucide="mail"></i> Send a Message</a>
+          </div>
+          <div class="cta-trust">
+            <span><i data-lucide="shield-check"></i> No long-term contracts</span>
+            <span><i data-lucide="zap"></i> Results in 30 days</span>
+            <span><i data-lucide="refresh-cw"></i> 100% satisfaction guarantee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       CONTACT SECTION
+  ════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Let's <span class="gradient-text">Start</span><br/>a Conversation</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon"><i data-lucide="mail"></i></div>
+            <div class="contact-detail">
+              <span class="contact-label">Email</span>
+              <a href="mailto:alex.morgan@domain.com" class="contact-value">alex.morgan@domain.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-detail">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Remote — Worldwide 🌍</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i data-lucide="clock"></i></div>
+            <div class="contact-detail">
+              <span class="contact-label">Response Time</span>
+              <span class="contact-value">Within 24 hours</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i data-lucide="calendar"></i></div>
+            <div class="contact-detail">
+              <span class="contact-label">Availability</span>
+              <span class="contact-value">Mon – Fri, 9AM – 6PM UTC</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" placeholder="John" required /></div>
+            <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" placeholder="Doe" required /></div>
+          </div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="john@company.com" required /></div>
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Performance Marketing</option>
+              <option>AI Automation Workflows</option>
+              <option>SEO &amp; Content Strategy</option>
+              <option>Email &amp; CRM Automation</option>
+              <option>AI Chatbot Development</option>
+              <option>Analytics &amp; BI Dashboards</option>
+              <option>Other / Full Package</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Monthly Budget</label>
+            <select id="budget" required>
+              <option value="" disabled selected>Select budget range...</option>
+              <option>Under $1,000</option>
+              <option>$1,000 – $3,000</option>
+              <option>$3,000 – $7,000</option>
+              <option>$7,000 – $15,000</option>
+              <option>$15,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Me About Your Project</label>
+            <textarea id="message" rows="5" placeholder="Describe your current challenges, goals, and what you're looking to achieve..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full"><i data-lucide="send"></i> Send Message</button>
+          <div class="form-success" id="formSuccess">
+            <i data-lucide="check-circle"></i>
+            <span>Message sent! I'll get back to you within 24 hours.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════
+       FOOTER
+  ════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo"><span class="logo-bracket">&lt;</span>AM<span class="logo-bracket">/&gt;</span></a>
+          <p class="footer-tagline">Digital Marketing & AI Automation Expert.<br/>Turning ideas into growth engines.</p>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+              <li><a href="#work">Work</a></li><li><a href="#process">Process</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Performance Marketing</a></li>
+              <li><a href="#services">AI Automation</a></li>
+              <li><a href="#services">SEO Strategy</a></li>
+              <li><a href="#services">Analytics</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">LinkedIn</a></li><li><a href="#">Twitter / X</a></li>
+              <li><a href="#">GitHub</a></li><li><a href="mailto:alex.morgan@domain.com">Email</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span id="copyright">© 2025 Alex Morgan. All rights reserved.</span>
+        <span class="footer-built">Built with ❤️ &amp; precision</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <!-- Portfolio Script -->
+  <script src="script.js"></script>
+</body>
+</html>
