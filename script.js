@@ -1,5 +1,5 @@
 /* ============================================
-   ALEX MORGAN — PORTFOLIO JAVASCRIPT
+SIFAT HYDER — PORTFOLIO JAVASCRIPT
    Premium Digital Marketing & AI Automation
    ============================================ */
 
